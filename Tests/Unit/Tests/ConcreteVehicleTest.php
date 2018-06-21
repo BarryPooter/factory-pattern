@@ -50,4 +50,13 @@ class ConcreteVehicleTest extends TestCase
         $this->sut->setColour('white');
         $this->assertEquals('white', $this->sut->getColour());
     }
+
+    public function testName () : void
+    {
+        $this->sut->setName('bike');
+        $this->assertEquals('bike', $this->sut->getName());
+
+        $this->sut->setName('car');
+        $this->assertEquals('car', $this->sut->getName());
+    }
 }

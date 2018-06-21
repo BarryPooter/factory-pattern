@@ -8,6 +8,7 @@ abstract class ConcreteVehicle implements Vehicle
     protected $wheels;
     protected $speed;
     protected $colour;
+    protected $name;
 
     public function setWheels(int $wheels): void
     {
@@ -15,12 +16,18 @@ abstract class ConcreteVehicle implements Vehicle
     }
 
     public function setSpeed(int $speed): void
-    { $this->speed = (int) $speed;
+    {
+        $this->speed = (int) $speed;
     }
 
     public function setColour(string $colour): void
     {
         $this->colour = (string) $colour;
+    }
+
+    public function setName (string $name): void
+    {
+        $this->name = (string) $name;
     }
 
     public function getWheels(): int
@@ -35,6 +42,11 @@ abstract class ConcreteVehicle implements Vehicle
 
     public function getColour(): string
     {
-        return $this->colour;
+        return (string) $this->colour;
+    }
+
+    public function getName (): string
+    {
+        return (string) $this->name;
     }
 }
