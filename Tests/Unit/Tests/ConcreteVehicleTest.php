@@ -34,5 +34,8 @@ class ConcreteVehicleTest extends TestCase
     {
         $this->sut->setSpeed(100);
         $this->assertEquals(100, $this->sut->getSpeed());
+
+        $this->sut->setSpeed(120);
+        $this->assertEquals(120, $this->sut->getSpeed());
     }
 }

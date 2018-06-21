@@ -6,6 +6,7 @@ use App\Contracts\Vehicle;
 class ConcreteVehicle implements Vehicle
 {
     protected $wheels;
+    protected $speed;
 
     public function setWheels(int $wheels): void
     {
@@ -14,6 +15,7 @@ class ConcreteVehicle implements Vehicle
 
     public function setSpeed(int $speed): void
     {
+        $this->speed = (int) $speed;
     }
 
     public function setColour(string $colour): void
@@ -27,7 +29,7 @@ class ConcreteVehicle implements Vehicle
 
     public function getSpeed(): int
     {
-        return 100;
+        return (int) $this->speed;
     }
 
     public function getColour(): string
