@@ -16,6 +16,7 @@ class CarFactory extends VehicleFactory
 
         $car = new Car();
         $car->setColour($availableColours[$randomize]);
+        $car->setName('car');
         return $car;
     }
 }

@@ -3,14 +3,19 @@ include_once 'vendor/autoload.php';
 
 function printVehicleDetails (\App\Contracts\Vehicle $vehicle)
 {
+    $name = $vehicle->getName();
     $colour = $vehicle->getColour();
     $wheels = $vehicle->getWheels();
     $speed  = $vehicle->getSpeed();
 
-    var_dump("A {$colour} ". get_class($vehicle) ." has been created, it has {$wheels} wheels and is currently driving at {$speed}/hr.");
+    echo "A {$colour} {$name} has been created, it has {$wheels} wheels and is currently driving at {$speed} km\\h.<br/>\n";
 }
 
 
 // Construct a Motorcycle using its Factory.
 $motorcycle = (new \App\Factories\MotorcycleFactory())->build();
 printVehicleDetails($motorcycle);
+
+for ($i = 0; $i < 3; $i++) {
+    printVehicleDetails((new \App\Factories\CarFactory())->build());
+}
