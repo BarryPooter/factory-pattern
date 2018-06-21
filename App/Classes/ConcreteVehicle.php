@@ -5,19 +5,31 @@ use App\Contracts\Vehicle;
 
 class ConcreteVehicle implements Vehicle
 {
+    protected $wheels;
 
-    public function setWheels(): void
+    public function setWheels(int $wheels): void
     {
-        // TODO: Implement setWheels() method.
+        $this->wheels = (int) $wheels;
     }
 
-    public function setSpeed(): void
+    public function setSpeed(int $speed): void
     {
-        // TODO: Implement setSpeed() method.
     }
 
-    public function setColour(): void
+    public function setColour(string $colour): void
     {
-        // TODO: Implement setColour() method.
+    }
+
+    public function getWheels(): int
+    {
+        return $this->wheels;
+    }
+
+    public function getSpeed(): int
+    {
+    }
+
+    public function getColour(): string
+    {
     }
 }
