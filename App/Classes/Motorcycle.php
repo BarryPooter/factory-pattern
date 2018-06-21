@@ -4,35 +4,12 @@ namespace App\Classes;
 
 use App\Contracts\Vehicle;
 
-class Motorcycle implements Vehicle
+class Motorcycle extends ConcreteVehicle
 {
-    public function setWheels(int $wheels): void
+    public function __construct()
     {
-        // TODO: Implement setWheels() method.
-    }
-
-    public function setSpeed(int $speed): void
-    {
-        // TODO: Implement setSpeed() method.
-    }
-
-    public function setColour(string $colour): void
-    {
-        // TODO: Implement setColour() method.
-    }
-
-    public function getWheels(): int
-    {
-        // TODO: Implement getWheels() method.
-    }
-
-    public function getSpeed(): int
-    {
-        // TODO: Implement getSpeed() method.
-    }
-
-    public function getColour(): string
-    {
-        // TODO: Implement getColour() method.
+        $this->setWheels(2);
+        $this->setSpeed(120);
+        $this->setColour('black');
     }
 }
