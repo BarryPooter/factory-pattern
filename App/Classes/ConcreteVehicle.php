@@ -3,7 +3,7 @@ namespace App\Classes;
 
 use App\Contracts\Vehicle;
 
-class ConcreteVehicle implements Vehicle
+abstract class ConcreteVehicle implements Vehicle
 {
     protected $wheels;
     protected $speed;
@@ -15,8 +15,7 @@ class ConcreteVehicle implements Vehicle
     }
 
     public function setSpeed(int $speed): void
-    {
-        $this->speed = (int) $speed;
+    { $this->speed = (int) $speed;
     }
 
     public function setColour(string $colour): void

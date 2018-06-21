@@ -6,6 +6,9 @@ use App\Classes\ConcreteVehicle;
 use App\Contracts\Vehicle;
 use PHPUnit\Framework\TestCase;
 
+class ConcreteDouble extends ConcreteVehicle
+{}
+
 class ConcreteVehicleTest extends TestCase
 {
     protected $sut;
@@ -13,7 +16,7 @@ class ConcreteVehicleTest extends TestCase
     protected function setUp() /* The :void return type declaration that should be here would cause a BC issue */
     {
         parent::setUp();
-        $this->sut = new ConcreteVehicle();
+        $this->sut = new ConcreteDouble();
     }
 
     public function testInstanceOf () : void
