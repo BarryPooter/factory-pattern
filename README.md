@@ -1,27 +1,26 @@
-### Bareboned PHP 7 with Composer set-up
-Want to quickly test a new feature, practise a new design pattern or just create a new project for yourself?
-Well this probably means you'll have to set-up your project with the most basic packages available: PHPUnit & Composer.
+### Bijhorende vragen voor opdracht
 
-And don't forget that you'll have to set-up _yet another_ docker config.. It's the same thing over and over again.
 
-This repository tries to get you started with just 2 commands - just run:
+##### Welk design pattern is gekozen?
+Er is gekozen voor de Factory Pattern.
 
-- `git pull git@github.com:KakaCarrotCake/barebone-php-composer.git`
-- `composer install`
+##### Wat zijn de kenmerken (toegevoegde waarde) van dit design pattern?
+Door de Factory Pattern te gebruiken kun je (business) logic beheerbaar op één plek onderhouden- in plaats van deze logica in de Client weg te moeten schrijven.
 
-And BAM, A new - bareboned - PHP instance is ready for you to be played with!
+##### Welke concept is bedacht om het pattern te kunnen toepassen?
+Ik heb gekozen voor het maken van een VehicleFactory - wat een abstracte klasse is en door de MotorcycleFactory & CarFactory beiden worden ge-inherit
 
-You can also run a docker environment in an instant by running the following command in the `/docker` directory:
+De logica is weggeschreven in de Factories, waarbij een auto 3 verschillende kleuren mag hebben - en altijd random is. De Motorcycle is altijd hetzelfde.
 
-- `docker-compose up`
+##### Wat zijn de responsibilities van de geimplementeerde classes?
+- De Vehicle \<interface\> class bepaald de methodes waaraan elke vehicle zich moet voldoen.
+- De ConcreteVehicle stelt een basis op voor elk voertuig.
+- De Car & Motorcycle extenden de ConcreteVehicle.
+- De VehicleFactory is een simpele abstract class, welke bepaald dat subclasses de `build()` method moeten bevatten.
+- De Factories instantieëren de desbtreffende SubjectClass met eventuele additionele logica toegevoegd die nodig is voor het instantieëren.
 
-### Included in this repository are the following packages/software:
-- Docker
-- PHPUnit
-- Composer
--- PHP 7
--- MySQL
--- Nginx
 
-### Suggestions?
-Got any suggestions that would be a good fit for the project? Just leave a suggestion in the issues section :-).
+
+##### In welk opzicht wordt polymorfie bereikt?
+
+Polymorfie wordt bereikt doordat de gebruikte Factories allemaal subclasses zijn van de abstract VehicleFactory class en de abstract methode `build()` moeten bevatten. Deze heeft ander gedrag voor de elke subclass van de VehicleFactory.
