@@ -29,4 +29,10 @@ class ConcreteVehicleTest extends TestCase
         $this->sut->setWheels(4);
         $this->assertEquals(4, $this->sut->getWheels());
     }
+
+    public function testSpeed () : void
+    {
+        $this->sut->setSpeed(100);
+        $this->assertEquals(100, $this->sut->getSpeed());
+    }
 }

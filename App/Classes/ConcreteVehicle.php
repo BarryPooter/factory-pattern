@@ -27,6 +27,7 @@ class ConcreteVehicle implements Vehicle
 
     public function getSpeed(): int
     {
+        return 100;
     }
 
     public function getColour(): string
