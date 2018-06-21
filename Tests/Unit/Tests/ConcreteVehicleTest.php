@@ -43,5 +43,8 @@ class ConcreteVehicleTest extends TestCase
     {
         $this->sut->setColour('red');
         $this->assertEquals('red', $this->sut->getColour());
+
+        $this->sut->setColour('white');
+        $this->assertEquals('white', $this->sut->getColour());
     }
 }

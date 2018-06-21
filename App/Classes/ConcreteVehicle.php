@@ -7,6 +7,7 @@ class ConcreteVehicle implements Vehicle
 {
     protected $wheels;
     protected $speed;
+    protected $colour;
 
     public function setWheels(int $wheels): void
     {
@@ -20,6 +21,7 @@ class ConcreteVehicle implements Vehicle
 
     public function setColour(string $colour): void
     {
+        $this->colour = (string) $colour;
     }
 
     public function getWheels(): int
@@ -34,6 +36,6 @@ class ConcreteVehicle implements Vehicle
 
     public function getColour(): string
     {
-        return 'red';
+        return $this->colour;
     }
 }
