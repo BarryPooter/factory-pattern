@@ -34,5 +34,6 @@ class ConcreteVehicle implements Vehicle
 
     public function getColour(): string
     {
+        return 'red';
     }
 }

@@ -38,4 +38,10 @@ class ConcreteVehicleTest extends TestCase
         $this->sut->setSpeed(120);
         $this->assertEquals(120, $this->sut->getSpeed());
     }
+
+    public function testColour () : void
+    {
+        $this->sut->setColour('red');
+        $this->assertEquals('red', $this->sut->getColour());
+    }
 }
